@@ -2,10 +2,7 @@
 #include "Platformer.hpp"
 #include "Breakout.hpp"
 #include "SlidingPuzzle.hpp"
-#include "raylib.h"
 #include "time.h"
-
-enum gameMode {slidingPuzzle, breakout, platformer};
 
 int main()
 {
@@ -17,20 +14,7 @@ int main()
     
     SetTargetFPS(60);
     
-    // Gameplay loop
-    while(!WindowShouldClose())
-    {
-        switch(currentMode)
-        {
-            case slidingPuzzle:
-                updateSlidingPuzzle();
-                break;
-            case breakout:
-                updateBreakout();
-                break;
-            case platformer:
-                updatePlatformer();
-                break;
-        }
-    }
+    if(!mainSlidingPuzzle()) return 0;
+    if(!mainBreakout()) return 0;
+    mainPlatformer();
 }

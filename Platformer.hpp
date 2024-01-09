@@ -1,6 +1,11 @@
-#include "GeneralClasses.hpp"
+#include "GeneralHeader.hpp"
 
-void updatePlatformer()
+void mainPlatformer()
 {
-
+    // Gameplay loop
+    while(!WindowShouldClose())
+    {
+        BeginDrawing();
+        EndDrawing();
+    }
 }
